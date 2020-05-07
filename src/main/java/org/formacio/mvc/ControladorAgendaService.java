@@ -19,7 +19,7 @@ public class ControladorAgendaService {
 	@Autowired
 	private AgendaService agendaService;
 
-	@RequestMapping(path = "/nombre")
+	@RequestMapping(path = "/nombre", method = RequestMethod.GET)
 	@ResponseBody
 	public String nombreContactes() {
 		Integer nombreContactes = agendaService.nombreContactes();
@@ -30,7 +30,7 @@ public class ControladorAgendaService {
 	 * 2d caso test, tiene que pasar el telefono del id pasado como parametro:
 	 */
 	
-	@RequestMapping(path = "/telefon")
+	@RequestMapping(path = "/telefon", method = RequestMethod.GET)
 	@ResponseBody
 	public String obtenerTelefono(@RequestParam String id) {
 		return agendaService.recupera(id).getTelefon();
@@ -45,7 +45,7 @@ public class ControladorAgendaService {
 	 * Solo tiene que aceptar JSON (MediaType.APPLICATION_JSON)
 	 */
 	
-	@RequestMapping(path = "/contacte/{id}")
+	@RequestMapping(path = "/contacte/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public Persona obtenerContacto(@PathVariable String id){
 		if(agendaService.recupera(id) == null) {
