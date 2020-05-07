@@ -5,6 +5,7 @@ import org.formacio.repositori.AgendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /*
@@ -20,6 +21,20 @@ public class ControladorAgendaService {
 	public String nombreContactes() {
 		Integer nombreContactes = agendaService.nombreContactes();
 		return nombreContactes.toString();
+	}
+	
+	/*
+	 * 2d caso test, tiene que pasar el telefono del id pasado como parametro:
+	 */
+	
+	@RequestMapping(path = "/telefon")
+	@ResponseBody
+	public String obtenerTelefono(@RequestParam String id) {
+		return agendaService.recupera(id).getTelefon();
+		/*
+		 * @RequestParam sirve para extraer la id para el endpoint
+		 * Permite obtener el telefono de la id X.
+		 */
 	}
 	
 }
