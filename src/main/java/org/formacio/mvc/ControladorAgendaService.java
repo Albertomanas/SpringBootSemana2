@@ -44,10 +44,10 @@ public class ControladorAgendaService {
 	 * Solo tiene que aceptar JSON (MediaType.APPLICATION_JSON)
 	 */
 	
-	@RequestMapping(path = "/concatcte/{id}")
+	@RequestMapping(path = "/contacte/{id}")
 	@ResponseBody
 	public Persona obtenerContacto(@PathVariable String id){
-		if(agendaService == null) {
+		if(agendaService.recupera(id) == null) {
 			throw new OperationException();
 			/*
 			 * Captación de excepciones en clase OperationException

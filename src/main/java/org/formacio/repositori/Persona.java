@@ -1,10 +1,13 @@
 package org.formacio.repositori;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /*
  * Test 3, /contacte/id tiene que ser aceptado por JSON
  */
+@XmlRootElement
 public class Persona {
 
 	@JsonProperty("contacte")
