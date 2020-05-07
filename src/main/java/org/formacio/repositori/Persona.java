@@ -10,8 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @XmlRootElement // Test contacte_xml, simplemente añadiendo XmlRootElement
 public class Persona {
 
-	@JsonProperty("contacte")
 	private String clau;
+	@JsonProperty("contacte")
 	private String nom;
 	private String telefon;
 	
