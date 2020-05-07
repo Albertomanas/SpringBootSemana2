@@ -1,9 +1,13 @@
 package org.formacio.repositori;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-
+/*
+ * Test 3, /contacte/id tiene que ser aceptado por JSON
+ */
 public class Persona {
 
+	@JsonProperty("contacte")
 	private String clau;
 	private String nom;
 	private String telefon;

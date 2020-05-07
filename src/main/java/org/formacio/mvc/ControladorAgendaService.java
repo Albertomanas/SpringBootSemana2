@@ -49,6 +49,9 @@ public class ControladorAgendaService {
 	public Persona obtenerContacto(@PathVariable String id){
 		if(agendaService == null) {
 			throw new OperationException();
+			/*
+			 * Captación de excepciones en clase OperationException
+			 */
 		} else
 			return agendaService.recupera(id);
 	}
