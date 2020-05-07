@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /*
  * Test 3, /contacte/id tiene que ser aceptado por JSON
  */
-@XmlRootElement
+@XmlRootElement // Test contacte_xml, simplemente añadiendo XmlRootElement
 public class Persona {
 
 	@JsonProperty("contacte")
